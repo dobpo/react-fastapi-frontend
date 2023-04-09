@@ -9,6 +9,7 @@ import {setAuth} from '../../actions/index';
 import {connect, Provider} from 'react-redux';
 import {legacy_createStore as createStore} from 'redux';
 import reducers from '../../reducers/index';
+import Table from '../table/Table';
 
 const store = createStore(
   reducers,
@@ -71,6 +72,7 @@ function App() {
               <LeftMenu />
               <main style={{ width: '100%', border: '1px solid red'}}>
                 {msg}
+                <Table />
               </main>
             </div>
           </div>
