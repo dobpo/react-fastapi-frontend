@@ -1,2 +1,6 @@
-# react-fastapi-frontend
-Frontend
+**Frontend**
+
+Установка и запуск фронтенда:
+
+- ```npm install```
+- ```npm run start```
