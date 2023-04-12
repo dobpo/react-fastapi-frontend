@@ -10,6 +10,8 @@ import {connect, Provider} from 'react-redux';
 import {legacy_createStore as createStore} from 'redux';
 import reducers from '../../reducers/index';
 import Table from '../table/Table';
+import Container from '@mui/material/Container';
+import Modal from '../modal/Modal';
 
 const store = createStore(
   reducers,
@@ -63,6 +65,10 @@ function App() {
   //   getWelcomeMsg();
   // }, [])
 
+
+
+
+
   return (
     <Provider store={store}>
       <AuthCheckContainer>
@@ -71,8 +77,11 @@ function App() {
             <div style={{ display: 'flex', height: '100%'}}>
               <LeftMenu />
               <main style={{ width: '100%', border: '1px solid red'}}>
-                {msg}
-                <Table />
+                <Container maxWidth="xl">
+                  <h1>Test</h1>
+                  <Modal btnText="text button" title="test title" />
+                  <Table />
+                </Container>
               </main>
             </div>
           </div>

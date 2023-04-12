@@ -1,7 +1,9 @@
 import * as React from 'react';
-import { DataGrid } from '@mui/x-data-grid';
+import {DataGrid} from '@mui/x-data-grid';
 import Menu from '@mui/material/Menu';
 import MenuItem from '@mui/material/MenuItem';
+import EditIcon from '@mui/icons-material/Edit';
+import Divider from '@mui/material/Divider';
 
 import styles from './Table.module.scss';
 
@@ -102,15 +104,15 @@ export default function RowContextMenu() {
       <DataGrid
         columns={columns}
         rows={rows}
-        // sx={{
-        //   "& .MuiDataGrid-cell": {
-        //     border: "1px solid lightgray",
-        //     // borderRadius: "5px",
-        //     backgroundColor: "white",
-        //     // width: "calc(100% - 2px)",
-        //     // marginTop: 3
-        //     },
-        // }}
+        sx={{
+          "& .MuiDataGrid-cell": {
+            outline: "1px solid lightgray",
+            // borderRadius: "5px",
+            backgroundColor: "white",
+            // width: "calc(100% - 2px)",
+            // marginTop: 3
+            },
+        }}
         slotProps={{
           row: {
             onContextMenu: handleContextMenu,
@@ -137,7 +139,13 @@ export default function RowContextMenu() {
           },
         }}
       >
-        <MenuItem onClick={convertToUppercase}>UPPERCASE</MenuItem>
+        {/*<MenuItem onClick={convertToUppercase}></MenuItem>*/}
+
+        <MenuItem onClick={convertToUppercase} disableRipple>
+          <EditIcon />
+          Edit (UP)
+        </MenuItem>
+        <Divider />
         <MenuItem onClick={convertToLowercase}>lowercase</MenuItem>
         <MenuItem onClick={deleteRow}>delete</MenuItem>
       </Menu>
